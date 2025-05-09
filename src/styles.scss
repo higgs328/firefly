@@ -1,11 +1,11 @@
 @use '@angular/material' as mat;
 
 html {
-  color-scheme: light dark;
+  color-scheme: dark;
 
   @include mat.theme(
     (
-      color: mat.$red-palette,
+      color: mat.$green-palette,
       typography: Oxanium,
       density: 0,
     )
