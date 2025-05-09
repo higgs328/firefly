@@ -1,6 +1,6 @@
 <div class="main-toolbar-container">
   <mat-toolbar color="primary" class="main-toolbar">
-    <img src="img/favicon-32x32.png" alt="FIREFLY" />
+    <img [src]="iconSource$ | async" alt="FIREFLY" />
     <app-search class="search" />
     <app-user-info />
   </mat-toolbar>
