@@ -1,0 +1,15 @@
+# Build output
+dist/
+build/
+
+# Dependency directories
+node_modules/
+
+# Angular config & lock files
+angular.json
+package-lock.json
+package.json
+tsconfig*.json
+
+# Misc
+coverage/

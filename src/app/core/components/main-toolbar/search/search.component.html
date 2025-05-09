@@ -1,0 +1,12 @@
+<input
+  type="text"
+  placeholder="Search"
+  matInput
+  [formControl]="searchInput"
+  [matAutocomplete]="auto"
+/>
+<mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+  @for (option of filteredOptions | async; track option) {
+    <mat-option [value]="option">{{ option }}</mat-option>
+  }
+</mat-autocomplete>

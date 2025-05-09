@@ -1,0 +1,51 @@
+<!-- User Avatar Button -->
+<button
+  mat-icon-button
+  (click)="toggleUserInfo()"
+  aria-label="User menu"
+  [disabled]="!hasUserInfo"
+>
+  <ng-container *ngIf="user?.picture; else defaultIcon">
+    <img class="user-avatar" [src]="user?.picture" alt="User avatar" />
+  </ng-container>
+  <ng-template #defaultIcon>
+    <mat-icon>account_circle</mat-icon>
+  </ng-template>
+</button>
+
+<!-- Floating User Info -->
+<div
+  class="user-info"
+  *ngIf="showUserInfo"
+  (clickOutside)="showUserInfo = false"
+>
+  <mat-card class="user-card">
+    <mat-card-header>
+      <mat-card-title>{{ user?.givenName }}</mat-card-title>
+    </mat-card-header>
+    <div class="user-card-content">
+      <div class="user-avatar-wrapper">
+        <ng-container *ngIf="user?.picture; else defaultLargeIcon">
+          <img
+            class="user-avatar-large"
+            [src]="user?.picture"
+            alt="User avatar"
+          />
+        </ng-container>
+        <ng-template #defaultLargeIcon>
+          <mat-icon class="user-avatar-large default-avatar-icon">
+            account_circle
+          </mat-icon>
+        </ng-template>
+      </div>
+      <mat-card-title class="user-name">{{ user?.name }}</mat-card-title>
+      <mat-card-subtitle class="user-email">
+        {{ user?.email }}
+      </mat-card-subtitle>
+      <button mat-flat-button (click)="logout()" class="user-logout">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
+    </div>
+  </mat-card>
+</div>

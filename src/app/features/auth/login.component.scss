@@ -1,0 +1,35 @@
+.login-container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+
+  mat-card {
+    text-align: center;
+    width: 350px;
+
+    mat-card-title {
+      font-size: xx-large;
+    }
+
+    .mat-mdc-card-header {
+      align-items: center;
+      border-radius: inherit;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .mat-mdc-card-actions {
+      justify-content: center;
+
+      .button-content {
+        align-items: center;
+        display: flex;
+        gap: 8px;
+      }
+    }
+  }
+}

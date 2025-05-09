@@ -1,0 +1,44 @@
+<div class="main-panel-container" [class.expanded]="isExpanded">
+  <!-- Expando -->
+  <div class="main-panel-expando">
+    <button mat-button (click)="toggleExpand()">-</button>
+  </div>
+
+  <!-- Main Toolbar -->
+  <h4 class="main-panel-title">Scenes</h4>
+  <div color="primary" class="main-panel-toolbar">
+    <div class="circle-button">
+      <button
+        mat-fab
+        [routerLink]="['/app/scene', 'structure']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon fontIcon="local_fire_department"></mat-icon>
+      </button>
+      <span class="label">Structure</span>
+    </div>
+    <div class="circle-button">
+      <button
+        mat-fab
+        [routerLink]="['/app/scene', 'mva']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon fontIcon="directions_car"></mat-icon>
+      </button>
+      <span class="label">MVA</span>
+    </div>
+    <div class="circle-button">
+      <button
+        mat-fab
+        [routerLink]="['/app/scene', 'wildland']"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon fontIcon="landscape"></mat-icon>
+      </button>
+      <span class="label">Wildland</span>
+    </div>
+  </div>
+</div>

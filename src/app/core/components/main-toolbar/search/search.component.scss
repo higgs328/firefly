@@ -1,0 +1,15 @@
+input {
+  background-color: transparent;
+  border-color: transparent !important;
+  font-size: large;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+input[matInput]:focus {
+  border-color: transparent;
+  box-shadow: none;
+  outline: none;
+}
