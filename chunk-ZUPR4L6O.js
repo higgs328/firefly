@@ -1,0 +1,1 @@
+import{f as s}from"./chunk-CCJU4DSH.js";import{a as o}from"./chunk-QGVBCWUY.js";import{e as r}from"./chunk-NFIPKH6V.js";import{l as p}from"./chunk-5QEXLALV.js";var t=class extends s{constructor(e){super(e),this.type=null}};o([r()],t.prototype,"type",void 0),t=o([p("esri.form.elements.inputs.Input")],t);var c=t;export{c as a};

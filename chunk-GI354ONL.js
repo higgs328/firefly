@@ -1,0 +1,1 @@
+import{b as e}from"./chunk-MBFDTZDK.js";import{a}from"./chunk-VVVBXDMO.js";import{b as t}from"./chunk-6RBQSBA2.js";import{a as o,f as r}from"./chunk-VTHXE323.js";function u(s,m,p){return r(this,null,function*(){let c=t(s);return(yield e(c,a.from(m),o({},p))).data.objectIds})}export{u as a};

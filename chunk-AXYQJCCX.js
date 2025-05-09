@@ -1,0 +1,1 @@
+function n(s){return(e,r)=>{e.hasOwnProperty("_messageBundleProps")||(e._messageBundleProps=e._messageBundleProps?e._messageBundleProps.slice():[]),e._messageBundleProps.push({bundlePath:s,propertyName:r})}}export{n as a};

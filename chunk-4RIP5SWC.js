@@ -1,0 +1,1 @@
+var g={width:600,height:400},d=1.5;function o(i,e){e=e||g;let{width:t,height:h}=e,n=t/h;return n<d?h=t/d:n>d&&(t=h*d),t>i.width&&(h*=i.width/t,t=i.width),h>i.height&&(t*=i.height/h,h=i.height),{width:Math.round(t),height:Math.round(h)}}export{o as a};

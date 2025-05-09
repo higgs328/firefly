@@ -1,0 +1,1 @@
+import{X as r}from"./chunk-3VRDAJCX.js";import{b as m}from"./chunk-X2B63YVS.js";import{x as a}from"./chunk-76ATOSLU.js";var e=!1,n=t=>{e=!0,r(t)};var c;function A(){e||n(a(m(c)))}function C(t){let s=[];for(let o of Object.keys(t))customElements.get(`calcite-${o}`)||s.push(t[o]?.());return s.length>0?Promise.all(s):null}c="components/assets";export{A as a,C as b};

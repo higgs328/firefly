@@ -1,0 +1,1 @@
+import{a as m}from"./chunk-HQHD6BMN.js";import{a as r}from"./chunk-JIRULGDT.js";import{a as p}from"./chunk-QJGOWIJD.js";var a={key:"type",base:p,typeMap:{algorithmic:r,multipart:m}};function l(t){return t?.type?t.type==="algorithmic"?r.fromJSON(t):t.type==="multipart"?m.fromJSON(t):null:null}export{a,l as b};

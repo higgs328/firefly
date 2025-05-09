@@ -1,0 +1,1 @@
+import{a as u,c as e}from"./chunk-JGDSALA2.js";import{a as s}from"./chunk-3O3XXTRY.js";import{f as m}from"./chunk-VTHXE323.js";function p(o,c,r,f){return m(this,null,function*(){return r=s.from(r||{}),u(o,"submitJob",r,c??{},f).then(({data:i})=>{let t=e.fromJSON(i);return t.sourceUrl=o,t})})}export{p as a};

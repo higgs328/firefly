@@ -1,0 +1,1 @@
+import{a as e}from"./chunk-XNG6JPXL.js";import{a as o}from"./chunk-QGVBCWUY.js";import{e as t}from"./chunk-NFIPKH6V.js";import{l as p}from"./chunk-5QEXLALV.js";var r=class extends e{constructor(s){super(s),this.view2dType="map"}};o([t({readOnly:!0})],r.prototype,"view2dType",void 0),r=o([p("esri.views.MapView")],r);var y=r;export{y as a};

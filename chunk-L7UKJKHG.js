@@ -1,0 +1,1 @@
+import{a as t}from"./chunk-V2IENAEU.js";import{a as e}from"./chunk-QAGQFNF2.js";import{a as o}from"./chunk-SY7JS2VW.js";var m={types:{key:"type",base:o,typeMap:{solid:e,sketch:t}},json:{write:!0}};export{m as a};

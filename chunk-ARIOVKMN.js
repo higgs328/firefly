@@ -1,0 +1,1 @@
+import{b as o}from"./chunk-5GIG46ID.js";import"./chunk-6MRUJ2UW.js";import"./chunk-2LI2GKBQ.js";import"./chunk-QBWJMFH5.js";import"./chunk-VTHXE323.js";function r(t){return o(t)}export{r as loadFont};

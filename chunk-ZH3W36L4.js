@@ -1,0 +1,1 @@
+import{a as e,b as o,c as r}from"./chunk-B2QMHWYJ.js";import"./chunk-VTHXE323.js";function a(t){return e(t)}function i(t){return t=t||globalThis.location.hostname,[/^zrh-.+?\.esri\.com$/].concat(r).some(n=>t?.match(n)!=null)}function m(t,n){return o(t,n)}export{m as adjustStaticAGOUrl,a as isDevEnvironment,i as isTelemetryDevEnvironment};

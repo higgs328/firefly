@@ -1,0 +1,1 @@
+import{c as s,d as u}from"./chunk-GWBB233S.js";function a(n,i,m){if(n?.timeInfo==null)return null;let{datesInUnknownTimezone:l=!1,timeOffset:o,useViewTime:r}=n,t=n.timeExtent;l&&(t=u(t));let e=r?i&&t?i.intersection(t):i||t:t;return!e||e.isEmpty||e.isAllTime?e:(o&&(e=e.offset(-o.value,o.unit)),l&&(e=s(e)),e.equals(m)?m:e)}export{a};

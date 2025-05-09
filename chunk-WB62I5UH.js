@@ -1,0 +1,1 @@
+import{a as i}from"./chunk-WKJYYP4U.js";import{a as o}from"./chunk-QGVBCWUY.js";import{e as t}from"./chunk-NFIPKH6V.js";import{l as s}from"./chunk-5QEXLALV.js";var r=class extends i{constructor(e){super(e),this.visible=!1}};o([t()],r.prototype,"visible",void 0),r=o([s("esri.widgets.Spinner.SpinnerViewModel")],r);var f=r;export{f as a};

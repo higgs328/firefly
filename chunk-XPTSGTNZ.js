@@ -1,0 +1,1 @@
+function a(n,r,e=[]){if(n>=r||(e.push(n),r-n<2))return e;let i=r-1;e.push(i);let o=s(n+1,i);for(;;){let t=o.next();if(t.done)break;e.push(t.value)}return e}function*s(n,r){if(n>=r)return;let e=n+Math.floor((r-n)/2);yield e;let i=s(n,e),o=s(e+1,r);for(;;){let t=i.next(),u=o.next();if(t.done&&u.done)break;t.done||(yield t.value),u.done||(yield u.value)}}export{a};

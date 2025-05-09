@@ -1,0 +1,1 @@
+import{b as s}from"./chunk-UPZXQSRZ.js";import{a as r}from"./chunk-QGVBCWUY.js";import{l as t}from"./chunk-5QEXLALV.js";var o=class extends s{constructor(p){super(p)}};o=r([t("esri.widgets.Popup.PopupViewModel")],o);var d=o;export{d as a};

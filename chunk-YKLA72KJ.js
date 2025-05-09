@@ -1,0 +1,1 @@
+import"./chunk-VTHXE323.js";function i(o,t,s){return o.customToolOptions=t,s&&(o.customActions=s),o}function n(o){o.dismissFloatingElements()}function e(o,t){return o.contextualToolLocation=t,o}function l(o,t){return o.groupCollapsePriorities=t,o}export{n as dismissFloatingElements,e as setContextualToolLocation,i as setCustomTools,l as setGroupCollapsePriorities};

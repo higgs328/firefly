@@ -1,0 +1,1 @@
+function r(t,{profiles:e}){let n=t.title;if(n!=null)return n;switch(t.type){case"ground":return e.ground;case"input":return e.input;case"query":return e.query;case"view":return e.view;default:return""}}export{r as a};

@@ -1,0 +1,1 @@
+import{f as e}from"./chunk-CCJU4DSH.js";import{a as o}from"./chunk-QGVBCWUY.js";import{e as r}from"./chunk-NFIPKH6V.js";import{l as s}from"./chunk-5QEXLALV.js";var t=class extends e{constructor(){super(...arguments),this.geometries=null}};o([r({json:{write:!0}})],t.prototype,"geometries",void 0),t=o([s("esri.rest.support.ImagePixelLocationResult")],t);var c=t;export{c as a};

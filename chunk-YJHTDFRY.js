@@ -1,0 +1,1 @@
+import{a as o,l as n}from"./chunk-FKASYKK7.js";import{a as e,b as i}from"./chunk-VTHXE323.js";function p(t,r,s=!1){let m=n(t.m_coordinate,o(r)),a=t.m_distance,d=t.isEmpty(),c=t.m_bRightSide;return i(e({coordinate:m,distance:a,isEmpty:d},s&&{isRightSide:c}),{vertexIndex:t.m_vertexIndex})}export{p as a};

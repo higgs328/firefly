@@ -1,0 +1,1 @@
+import{o as n}from"./chunk-AUAZP44J.js";import{a as r,b as t,f as a}from"./chunk-VTHXE323.js";function i(o,e){return a(this,null,function*(){let{data:s}=yield n(o,{responseType:"json",query:t(r({f:"json"},e?.customParameters),{token:e?.apiKey})});return s})}export{i as a};

@@ -1,0 +1,1 @@
+import{a as s}from"./chunk-L245KTSY.js";import{a as t}from"./chunk-QGVBCWUY.js";import{l as o}from"./chunk-5QEXLALV.js";var r=class extends s{constructor(e){super(e)}};r=t([o("esri.rest.knowledgeGraph.ObjectValue")],r);var f=r;export{f as a};
