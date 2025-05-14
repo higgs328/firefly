@@ -8,7 +8,6 @@ import {
   MatCardTitle,
   MatCardActions,
 } from '@angular/material/card';
-import { MatIcon } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth.service';
 
@@ -21,7 +20,6 @@ import { AuthService } from '../../core/services/auth.service';
     MatCardContent,
     MatCardTitle,
     MatCardActions,
-    MatIcon,
   ],
   selector: 'app-login',
   standalone: true,
