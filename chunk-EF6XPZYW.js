@@ -1,1 +1,0 @@
-import{eb as n}from"./chunk-E3QJNQMX.js";var o=class e{static \u0275fac=function(t){return new(t||e)};static \u0275cmp=n({type:e,selectors:[["app-map-structure"]],decls:0,vars:0,template:function(t,p){},encapsulation:2})};export{o as MapStructureComponent};

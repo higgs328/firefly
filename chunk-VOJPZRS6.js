@@ -1,1 +1,0 @@
-import{eb as a}from"./chunk-E3QJNQMX.js";var t=class e{static \u0275fac=function(n){return new(n||e)};static \u0275cmp=a({type:e,selectors:[["app-map-wildland"]],decls:0,vars:0,template:function(n,p){},encapsulation:2})};export{t as MapWildlandComponent};
