@@ -14,6 +14,11 @@ export const routes: Routes = [
     children: [
       {
         loadComponent: () =>
+          import('./features/map/map.component').then((m) => m.MapComponent),
+        path: 'scene',
+      },
+      {
+        loadComponent: () =>
           import('./features/map/structure/map-structure.component').then(
             (m) => m.MapStructureComponent,
           ),
