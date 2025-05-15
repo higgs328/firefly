@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   getAuth,
   GoogleAuthProvider,
-  onAuthStateChanged,
   onIdTokenChanged,
   signOut,
-  signInWithRedirect,
+  signInWithPopup,
 } from 'firebase/auth';
 import { UserService } from './user.service';
 
@@ -15,21 +15,23 @@ import { UserService } from './user.service';
 export class AuthService {
   private auth = getAuth();
 
-  constructor(private userService: UserService) {
-    onAuthStateChanged(this.auth, (user) => {
-      userService.init(user);
-    });
+  constructor(
+    private userService: UserService,
+    private router: Router,
+  ) {
     onIdTokenChanged(this.auth, (user) => {
-      userService.init(user);
+      this.userService.init(user);
+      this.router.navigate(['/app']);
     });
   }
 
   async login(): Promise<void> {
     const provider = new GoogleAuthProvider();
-    await signInWithRedirect(this.auth, provider);
+    await signInWithPopup(this.auth, provider);
   }
 
   async logout(): Promise<void> {
     await signOut(this.auth);
+    this.router.navigate(['/']);
   }
 }

@@ -40,7 +40,7 @@ export class UserInfoComponent {
   }
 
   get hasUserInfo(): boolean {
-    return true;
+    return !!this.user;
   }
 
   toggleUserInfo(): void {
