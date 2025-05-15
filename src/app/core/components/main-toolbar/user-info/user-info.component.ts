@@ -8,7 +8,7 @@ import {
   MatCardTitle,
 } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { UserInfo } from '../../../models/user.model';
+import { UserInfo } from 'firebase/auth';
 import { AuthService } from '../../../services/auth.service';
 import { UserService } from '../../../services/user.service';
 
@@ -40,7 +40,7 @@ export class UserInfoComponent {
   }
 
   get hasUserInfo(): boolean {
-    return Boolean(this.userService.loaded && this.authService.isLoggedIn);
+    return true;
   }
 
   toggleUserInfo(): void {
