@@ -1,1 +1,0 @@
-import{a as r}from"./chunk-QGVBCWUY.js";import{H as m}from"./chunk-MYO4NP2N.js";import{e as s}from"./chunk-NFIPKH6V.js";import{l as p}from"./chunk-5QEXLALV.js";var o,t=o=class extends m{constructor(){super(...arguments),this.url=""}clone(){return new o({url:this.url})}};r([s({type:String})],t.prototype,"url",void 0),t=o=r([p("esri.symbols.support.Thumbnail")],t);export{t as a};

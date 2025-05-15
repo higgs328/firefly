@@ -1,1 +1,0 @@
-import{a as s}from"./chunk-4P2XDT7J.js";import{a as r}from"./chunk-QGVBCWUY.js";import{l as o}from"./chunk-5QEXLALV.js";var t=class extends s{constructor(e){super(e),this.type="entity"}};t=r([o("esri.rest.knowledgeGraph.EntityType")],t);var f=t;export{f as a};

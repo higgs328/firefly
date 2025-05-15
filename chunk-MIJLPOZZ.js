@@ -1,1 +1,0 @@
-import{a as r,f as s,g as e}from"./chunk-3ZJ4NMBE.js";function p(t){return e(t)&&t.intersector===r.TERRAIN&&!!t.target}var o=class extends s{constructor(a,n,i){super(a,n),this.triangleNr=i}};function m(t){return e(t)&&t.intersector===r.OVERLAY&&!!t.target}export{p as a,o as b,m as c};

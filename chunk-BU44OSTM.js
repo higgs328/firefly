@@ -1,1 +1,0 @@
-import{a as r,b as a}from"./chunk-QAHTJVUZ.js";import{a as o}from"./chunk-QGVBCWUY.js";var e=class extends r{constructor(){super(...arguments),this.receiveShadows=!0}};o([a()],e.prototype,"receiveShadows",void 0);export{e as a};

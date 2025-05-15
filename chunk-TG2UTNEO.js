@@ -1,1 +1,0 @@
-var t={remove:()=>{}};function e(n){return n?{remove(){n&&(n(),n=void 0)}}:t}function r(n){n.forEach(o=>o?.remove())}function a(n){r(n),n.length=0}function l(n){return e(()=>r(n))}function u(n){return e(()=>n()?.remove())}function s(n){return e(()=>n?.abort())}function d(n){return e(n!=null?()=>n.destroy():void 0)}export{e as a,r as b,a as c,l as d,u as e,s as f,d as g};

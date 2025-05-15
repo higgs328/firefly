@@ -1,0 +1,1 @@
+import{eb as a}from"./chunk-E3QJNQMX.js";var n=class e{static \u0275fac=function(t){return new(t||e)};static \u0275cmp=a({type:e,selectors:[["app-map-mva"]],decls:0,vars:0,template:function(t,p){},encapsulation:2})};export{n as MapMVAComponent};

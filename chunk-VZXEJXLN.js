@@ -1,1 +1,0 @@
-import{a}from"./chunk-MBFDTZDK.js";import{a as m}from"./chunk-VVVBXDMO.js";import{a as t}from"./chunk-4YTM754S.js";import{b as o}from"./chunk-6RBQSBA2.js";import{a as r,f as e}from"./chunk-VTHXE323.js";function T(s,f,p,u){return e(this,null,function*(){let i=o(s),c=r({},u),{data:n}=yield a(i,m.from(f),p,c);return t.fromJSON(n)})}export{T as a};

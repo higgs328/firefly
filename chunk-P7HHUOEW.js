@@ -1,1 +1,0 @@
-import{a as e}from"./chunk-LC44KLTN.js";import{a as t}from"./chunk-QGVBCWUY.js";import{e as o}from"./chunk-NFIPKH6V.js";import{l as s}from"./chunk-5QEXLALV.js";var u=a=>{let r=class extends a{constructor(){super(...arguments),this.trackInfo=null}};return t([o({type:e})],r.prototype,"trackInfo",void 0),r=t([s("esri.layers.mixins.TrackableLayer")],r),r};export{u as a};

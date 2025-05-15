@@ -1,1 +1,0 @@
-import{p as a,r as t}from"./chunk-NJWTSROP.js";var s;function i(o){return o&&a(o)?s.Mars:o&&t(o)?s.Moon:s.Earth}(function(o){o[o.Earth=1]="Earth",o[o.Mars=2]="Mars",o[o.Moon=3]="Moon",o[o.COUNT=4]="COUNT"})(s||(s={}));export{s as a,i as b};

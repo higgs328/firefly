@@ -1,1 +1,0 @@
-function n(e,t,r=!1){let{hasM:h,hasZ:s}=e;Array.isArray(t)?t.length!==4||h||s?t.length===3&&r&&!h?(s=!0,h=!1):t.length===3&&h&&s&&(h=!1,s=!1):(h=!0,s=!0):(s=!s&&t.hasZ&&(!h||t.hasM),h=!h&&t.hasM&&(!s||t.hasZ)),e.hasZ=s,e.hasM=h}export{n as a};

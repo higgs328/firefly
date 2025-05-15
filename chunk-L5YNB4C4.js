@@ -1,1 +1,0 @@
-import{b as i}from"./chunk-FM2MN524.js";import{D as n}from"./chunk-6B5XFA6F.js";var o=class p extends i{constructor(t,s,r){super(s,r),this.point=t}equals(t){return t instanceof p&&n(this.point,t.point)}};export{o as a};

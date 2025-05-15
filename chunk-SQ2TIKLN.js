@@ -1,1 +1,0 @@
-import{C as n}from"./chunk-ZHP4DIKL.js";function r(o){return o[o.openProp||"open"]}function i(o){requestAnimationFrame(()=>{o.transitionEl&&n(o.transitionEl,o.transitionProp,()=>{r(o)?o.onBeforeOpen():o.onBeforeClose()},()=>{r(o)?o.onOpen():o.onClose()})})}export{i as a};

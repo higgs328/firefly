@@ -1,1 +1,0 @@
-import{o as p}from"./chunk-QNXZMK4V.js";import{a as n}from"./chunk-PUVSV35R.js";import{k as i}from"./chunk-57VFBGF3.js";import{d as s}from"./chunk-NJWTSROP.js";function m(o,r){let e=p(o,n.absolute);if(!e)return null;let t=e.position;return s(o.spatialReference,r)||(t=new Float64Array(e.position.length),i(e.position,o.spatialReference,0,t,r,0))?t:null}export{m as a};

@@ -1,1 +1,0 @@
-import{a as o}from"./chunk-QGVBCWUY.js";import{H as t}from"./chunk-MYO4NP2N.js";import{e}from"./chunk-NFIPKH6V.js";import{l as p}from"./chunk-5QEXLALV.js";var r=class extends t{constructor(s){super(s),this.openCypherQuery=""}};o([e()],r.prototype,"openCypherQuery",void 0),r=o([p("esri.rest.knowledgeGraph.GraphQuery")],r);var f=r;export{f as a};

@@ -1,1 +1,0 @@
-import{a as o}from"./chunk-7P44K2YD.js";function r(t){return t.icon?t.icon:"image"in t&&t.image||t.className?void 0:"question"}function s(t){return t?{backgroundImage:`url(${t})`}:{}}function c({action:t,feature:i}){let n=i?.attributes,e="image"in t?t.image:void 0;return e&&n?o(e,n):e??""}export{r as a,s as b,c};

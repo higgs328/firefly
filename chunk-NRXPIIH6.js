@@ -1,1 +1,0 @@
-import{a as i}from"./chunk-FY4QM6AV.js";import{a as o}from"./chunk-QGVBCWUY.js";import{e as t}from"./chunk-NFIPKH6V.js";var r=class extends i{constructor(e){super(e),this.layer=null,this.sublayerViews=null}highlight(e){throw new Error("Not implemented")}};o([t()],r.prototype,"layer",void 0),o([t()],r.prototype,"sublayerViews",void 0);export{r as a};

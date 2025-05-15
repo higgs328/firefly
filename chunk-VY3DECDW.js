@@ -1,1 +1,0 @@
-import{a as s}from"./chunk-N7H6JYYU.js";var e=class extends s{constructor(t){super(),this.declaredClass="esri.arcade.Portal",this.immutable=!1,this.setField("url",t),this.immutable=!0}};export{e as a};

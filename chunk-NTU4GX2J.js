@@ -1,1 +1,0 @@
-import{a as S}from"./chunk-QCZ3ZIGQ.js";import{a as e}from"./chunk-NJWTSROP.js";function s(i,o){return i!=null&&(o==null||(o===S.Local?!i.isGeographic||i.isWGS84||i.wkid===e.CGCS2000:i.isWebMercator||i.isWGS84||i.wkid===e.CGCS2000||i.wkid===e.GCSMARS2000||i.wkid===e.GCSMARS2000_SPHERE||i.wkid===e.GCSMOON2000))}export{s as a};

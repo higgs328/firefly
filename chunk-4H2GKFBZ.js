@@ -1,1 +1,0 @@
-var s=class{constructor(t){this.layer=null,this.memory=0,this.displayedNumberOfFeatures=0,this.maximumNumberOfFeatures=null,this.totalNumberOfFeatures=null,this.layer=t.layer;let e=t.performanceInfo;this.memory=e.usedMemory,this.displayedNumberOfFeatures=e.displayedFeatures,this.maximumNumberOfFeatures=e.maximumFeatures,this.totalNumberOfFeatures=e.totalFeatures}};export{s as a};

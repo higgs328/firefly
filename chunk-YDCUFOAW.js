@@ -1,1 +1,0 @@
-import{f as e}from"./chunk-CCJU4DSH.js";import{a as t}from"./chunk-QGVBCWUY.js";import{e as o}from"./chunk-NFIPKH6V.js";import{l as s}from"./chunk-5QEXLALV.js";var r=class extends e{constructor(){super(...arguments),this.url=null}};t([o({json:{name:"imageURL",write:!0}})],r.prototype,"url",void 0),r=t([s("esri.rest.support.ImageUrlResult")],r);var c=r;export{c as a};

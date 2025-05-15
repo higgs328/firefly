@@ -1,1 +1,0 @@
-import{Ta as o}from"./chunk-A2QQP5DF.js";import{c as n}from"./chunk-LTHAIW3V.js";var r=new o;function f(t,e,u){return r.execute(t,e,u,null)}function l(t,e){return r.executeMany(new n(t),e,null).next()}function v(){return r.supportsCurves()}export{f as a,l as b,v as c};

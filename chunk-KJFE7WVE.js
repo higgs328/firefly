@@ -1,1 +1,0 @@
-import{a}from"./chunk-342NGUMP.js";import{s as n}from"./chunk-DA3SDKGO.js";import{a as i}from"./chunk-BOVYXYHK.js";import{f as c}from"./chunk-VTHXE323.js";function p(t,e,o){return!!a(t,e,r,o.spatialReference)&&(o.x=r[0],o.y=r[1],o.z=r[2],!0)}function u(t,e,o,s){return c(this,null,function*(){return yield n(e,o.spatialReference,null,s),p(t,e,o)})}var r=i();export{p as a,u as b};

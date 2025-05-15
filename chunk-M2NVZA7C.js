@@ -1,1 +1,0 @@
-import{a as o}from"./chunk-W5OI4BJ2.js";import{h as e}from"./chunk-HM5RIVQC.js";var t=new Map([["geometry",[new o("a_pos",2,e.BYTE,0,2)]]]),r=new Map([["geometry",[new o("a_pos",2,e.BYTE,0,4),new o("a_tex",2,e.BYTE,2,4)]]]),p=new Map([["geometry",[new o("a_pos",2,e.UNSIGNED_SHORT,0,4)]]]);export{t as a,r as b,p as c};

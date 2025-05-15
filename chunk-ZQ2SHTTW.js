@@ -1,1 +1,0 @@
-function h(e){return e&&typeof e.render=="function"}function v(e){return e&&typeof e.postMixInProperties=="function"&&typeof e.buildRendering=="function"&&typeof e.postCreate=="function"&&typeof e.startup=="function"}export{h as a,v as b};

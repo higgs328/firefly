@@ -1,1 +1,0 @@
-import{a as n,b as r}from"./chunk-FM2MN524.js";import{D as i}from"./chunk-6B5XFA6F.js";var a=class s extends r{constructor(t,e,p,o=n.ALL){super(p,o),this.lineStart=t,this.lineEnd=e}equals(t){return t instanceof s&&i(this.lineStart,t.lineStart)&&i(this.lineEnd,t.lineEnd)}};export{a};
