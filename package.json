@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0 --port 4200",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -28,9 +28,9 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
-    "@bluehalo/ngx-leaflet": "^19.0.0",
     "firebase": "^11.7.1",
-    "leaflet": "^1.9.4",
+    "mapbox-gl": "^3.12.0",
+    "ngx-mapbox-gl": "^12.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -40,7 +40,6 @@
     "@angular/cli": "^19.2.6",
     "@angular/compiler-cli": "^19.2.0",
     "@types/jasmine": "~5.1.0",
-    "@types/leaflet": "^1.9.17",
     "angular-cli-ghpages": "^2.0.3",
     "angular-eslint": "19.3.0",
     "concurrently": "^9.1.2",
