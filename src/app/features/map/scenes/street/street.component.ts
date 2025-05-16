@@ -8,9 +8,11 @@ import { SceneBaseComponent } from '../scene-base.component';
   imports: [MapComponent, TrailLayerComponent],
   providers: [mapboxProvider],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  selector: 'app-mva-scene',
+  selector: 'app-street-scene',
   standalone: true,
-  styleUrl: './mva.component.scss',
-  templateUrl: './mva.component.html',
+  styleUrl: './street.component.scss',
+  templateUrl: './street.component.html',
 })
-export class MVASceneComponent extends SceneBaseComponent {}
+export class StreetSceneComponent extends SceneBaseComponent {
+  override style = this.styles.street;
+}

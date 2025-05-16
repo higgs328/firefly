@@ -13,4 +13,6 @@ import { SceneBaseComponent } from '../scene-base.component';
   styleUrl: './structure.component.scss',
   templateUrl: './structure.component.html',
 })
-export class StructureSceneComponent extends SceneBaseComponent {}
+export class StructureSceneComponent extends SceneBaseComponent {
+  override style = this.styles.structure;
+}

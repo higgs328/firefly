@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MapWildlandComponent } from './map-wildland.component';
+import { WildlandSceneComponent } from './wildland.component';
 
-describe('MapStructureComponent', () => {
-  let component: MapWildlandComponent;
-  let fixture: ComponentFixture<MapWildlandComponent>;
+describe('WildlandSceneComponent', () => {
+  let component: WildlandSceneComponent;
+  let fixture: ComponentFixture<WildlandSceneComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MapWildlandComponent],
+      imports: [WildlandSceneComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MapWildlandComponent);
+    fixture = TestBed.createComponent(WildlandSceneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

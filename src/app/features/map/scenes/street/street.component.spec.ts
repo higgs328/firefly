@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MapMVAComponent } from './map-mva.component';
+import { StreetSceneComponent } from './street.component';
 
-describe('MapMVAComponent', () => {
-  let component: MapMVAComponent;
-  let fixture: ComponentFixture<MapMVAComponent>;
+describe('StreetSceneComponent', () => {
+  let component: StreetSceneComponent;
+  let fixture: ComponentFixture<StreetSceneComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MapMVAComponent],
+      imports: [StreetSceneComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MapMVAComponent);
+    fixture = TestBed.createComponent(StreetSceneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

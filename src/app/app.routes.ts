@@ -21,10 +21,10 @@ export const routes: Routes = [
       },
       {
         loadComponent: () =>
-          import('./features/map/scenes/mva/mva.component').then(
-            (m) => m.MVASceneComponent,
+          import('./features/map/scenes/street/street.component').then(
+            (m) => m.StreetSceneComponent,
           ),
-        path: 'scene/mva',
+        path: 'scene/street',
       },
       {
         loadComponent: () =>

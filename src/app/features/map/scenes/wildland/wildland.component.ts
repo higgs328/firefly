@@ -13,4 +13,6 @@ import { SceneBaseComponent } from '../scene-base.component';
   styleUrl: './wildland.component.scss',
   templateUrl: './wildland.component.html',
 })
-export class WildlandSceneComponent extends SceneBaseComponent {}
+export class WildlandSceneComponent extends SceneBaseComponent {
+  override style = this.styles.wildland;
+}
