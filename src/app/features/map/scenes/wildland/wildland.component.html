@@ -1,5 +1,10 @@
-<app-map
+<mgl-map
   [style]="'mapbox://styles/rhiggins-cvfd/cmapjjkcq00k901sdhjk15wjj'"
+  [zoom]="[12]"
   [center]="[-73.9150899, 41.32923]"
-  [zoom]="12"
-/>
+  [dragRotate]="true"
+  [pitchWithRotate]="true"
+  class="map-container"
+>
+  <app-trail-layer />
+</mgl-map>

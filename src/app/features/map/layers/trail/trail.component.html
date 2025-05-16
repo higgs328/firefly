@@ -1,0 +1,11 @@
+<mgl-geojson-source id="trails-source" [data]="geojson"></mgl-geojson-source>
+
+<mgl-layer
+  id="trails-layer"
+  type="line"
+  [source]="'trails-source'"
+  [paint]="{
+    'line-color': '#627BC1',
+    'line-width': 20,
+  }"
+/>
