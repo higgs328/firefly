@@ -14,22 +14,22 @@ export const routes: Routes = [
     children: [
       {
         loadComponent: () =>
-          import('./features/map/structure/map-structure.component').then(
-            (m) => m.MapStructureComponent,
+          import('./features/map/scenes/structure/structure.component').then(
+            (m) => m.StructureSceneComponent,
           ),
         path: 'scene/structure',
       },
       {
         loadComponent: () =>
-          import('./features/map/mva/map-mva.component').then(
-            (m) => m.MapMVAComponent,
+          import('./features/map/scenes/mva/mva.component').then(
+            (m) => m.MVASceneComponent,
           ),
         path: 'scene/mva',
       },
       {
         loadComponent: () =>
-          import('./features/map/wildland/map-wildland.component').then(
-            (m) => m.MapWildlandComponent,
+          import('./features/map/scenes/wildland/wildland.component').then(
+            (m) => m.WildlandSceneComponent,
           ),
         path: 'scene/wildland',
       },
