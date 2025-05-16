@@ -1,8 +1,6 @@
 import { LngLatLike } from 'mapbox-gl';
-import {
-  mapboxConfig,
-  MapStyleConfig,
-} from '../../../core/configs/mapbox.config';
+import { mapboxConfig } from '../../../core/configs/mapbox.config';
+import { MapStyleConfig } from '../../../core/configs/mapbox.config.types';
 
 export abstract class SceneBaseComponent {
   zoom: [number] = mapboxConfig.map.zoom;
