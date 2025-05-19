@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import type { FeatureCollection, LineString } from 'geojson';
+import { Component, inject, OnInit } from '@angular/core';
+import type { FeatureCollection, LineString, MultiLineString } from 'geojson';
 import { GeoJSONSourceComponent, LayerComponent } from 'ngx-mapbox-gl';
+import { TrailService } from '../../../../core/services/trail.service';
 
 @Component({
   imports: [GeoJSONSourceComponent, LayerComponent],
@@ -9,21 +10,16 @@ import { GeoJSONSourceComponent, LayerComponent } from 'ngx-mapbox-gl';
   styleUrl: './trail.component.scss',
   templateUrl: './trail.component.html',
 })
-export class TrailLayerComponent {
-  geojson: FeatureCollection<LineString> = {
-    features: [
-      {
-        geometry: {
-          coordinates: [
-            [-73.9150899, 41.32923],
-            [-73.9030899, 41.34323],
-          ],
-          type: 'LineString',
-        },
-        properties: {},
-        type: 'Feature',
-      },
-    ],
-    type: 'FeatureCollection',
-  };
+export class TrailLayerComponent implements OnInit {
+  private trailService = inject(TrailService);
+  featureCollection?: FeatureCollection<LineString | MultiLineString>;
+
+  ngOnInit(): void {
+    this.trailService.getTrails().subscribe((features) => {
+      this.featureCollection = {
+        features,
+        type: 'FeatureCollection',
+      };
+    });
+  }
 }

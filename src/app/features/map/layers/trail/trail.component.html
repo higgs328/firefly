@@ -1,11 +1,30 @@
-<mgl-geojson-source id="trails-source" [data]="geojson"></mgl-geojson-source>
+<mgl-geojson-source
+  id="trails-source"
+  [data]="featureCollection"
+></mgl-geojson-source>
 
+<!-- White background line (thicker) -->
 <mgl-layer
-  id="trails-layer"
+  id="trails-outline"
   type="line"
   [source]="'trails-source'"
   [paint]="{
-    'line-color': '#627BC1',
-    'line-width': 20,
+    'line-color': '#000000',
+    'line-width': 5,
   }"
-/>
+  [layout]="{
+    'line-join': 'round',
+    'line-cap': 'round',
+  }"
+></mgl-layer>
+
+<!-- Colored line on top -->
+<mgl-layer
+  id="trails-line"
+  type="line"
+  [source]="'trails-source'"
+  [paint]="{
+    'line-color': ['get', 'display_color'],
+    'line-width': 2,
+  }"
+></mgl-layer>
