@@ -15,7 +15,7 @@ export class TrailLayerComponent implements OnInit {
   featureCollection?: FeatureCollection<LineString | MultiLineString>;
 
   ngOnInit(): void {
-    this.trailService.getTrails().subscribe((features) => {
+    this.trailService.trails.subscribe((features) => {
       this.featureCollection = {
         features,
         type: 'FeatureCollection',

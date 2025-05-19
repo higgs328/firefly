@@ -1,7 +1,11 @@
-// core/services/trail.service.ts
 import { Injectable, inject } from '@angular/core';
-import { collection, collectionData, Firestore } from '@angular/fire/firestore';
-import type { Feature, MultiLineString } from 'geojson';
+import {
+  Firestore,
+  collection,
+  CollectionReference,
+  collectionData,
+} from '@angular/fire/firestore';
+import { Feature, MultiLineString } from 'geojson';
 import { Observable, map } from 'rxjs';
 
 export interface TrailRecord {
@@ -12,10 +16,12 @@ export interface TrailRecord {
 @Injectable({ providedIn: 'root' })
 export class TrailService {
   private firestore = inject(Firestore);
-  private trailsRef = collection(this.firestore, 'trails');
+  private trailsRef: CollectionReference;
+  public trails: Observable<Feature<MultiLineString>[]>;
 
-  getTrails(): Observable<Feature<MultiLineString>[]> {
-    return collectionData(this.trailsRef, { idField: 'id' }).pipe(
+  constructor() {
+    this.trailsRef = collection(this.firestore, 'trails');
+    this.trails = collectionData(this.trailsRef, { idField: 'id' }).pipe(
       map((docs) =>
         (docs as TrailRecord[]).map(
           (doc) => JSON.parse(doc.geojson) as Feature<MultiLineString>,
