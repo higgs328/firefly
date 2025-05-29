@@ -1,3 +1,9 @@
-<mgl-map [style]="style" [zoom]="zoom" [center]="center" class="map-container">
+<mgl-map
+  [style]="style"
+  [zoom]="zoom"
+  [center]="center"
+  class="map-container"
+  (mapCreate)="mapCreate($event)"
+>
   <app-trail-layer />
 </mgl-map>
