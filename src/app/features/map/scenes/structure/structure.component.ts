@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MapComponent } from 'ngx-mapbox-gl';
 import { mapboxProvider } from '../../../../core/providers/mapbox.provider';
 import { DrawService } from '../../../../core/services/draw.service';
-import { SceneBaseComponent } from '../scene-base.component';
+import { SceneBase } from '../scene-base';
 
 @Component({
   imports: [MapComponent],
@@ -13,7 +13,7 @@ import { SceneBaseComponent } from '../scene-base.component';
   styleUrl: './structure.component.scss',
   templateUrl: './structure.component.html',
 })
-export class StructureSceneComponent extends SceneBaseComponent {
+export class StructureSceneComponent extends SceneBase {
   override style = this.styles.structure;
 
   constructor(drawService: DrawService) {

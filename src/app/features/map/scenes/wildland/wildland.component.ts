@@ -3,7 +3,7 @@ import { MapComponent } from 'ngx-mapbox-gl';
 import { mapboxProvider } from '../../../../core/providers/mapbox.provider';
 import { DrawService } from '../../../../core/services/draw.service';
 import { TrailLayerComponent } from '../../layers/trail/trail.component';
-import { SceneBaseComponent } from '../scene-base.component';
+import { SceneBase } from '../scene-base';
 
 @Component({
   imports: [MapComponent, TrailLayerComponent],
@@ -14,7 +14,7 @@ import { SceneBaseComponent } from '../scene-base.component';
   styleUrl: './wildland.component.scss',
   templateUrl: './wildland.component.html',
 })
-export class WildlandSceneComponent extends SceneBaseComponent {
+export class WildlandSceneComponent extends SceneBase {
   override style = this.styles.wildland;
 
   constructor(drawService: DrawService) {

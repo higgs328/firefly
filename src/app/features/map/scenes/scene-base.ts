@@ -3,7 +3,7 @@ import { mapboxConfig } from '../../../core/configs/mapbox.config';
 import { MapStyleConfig } from '../../../core/configs/mapbox.config.types';
 import { DrawService } from '../../../core/services/draw.service';
 
-export abstract class SceneBaseComponent {
+export abstract class SceneBase {
   zoom: [number] = mapboxConfig.map.zoom;
   center: LngLatLike = mapboxConfig.map.center;
   styles: MapStyleConfig = mapboxConfig.styles;
