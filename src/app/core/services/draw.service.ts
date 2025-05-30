@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
-import type { FeatureCollection } from 'geojson';
+import type { Feature, FeatureCollection } from 'geojson';
 import { Map as MapboxMap } from 'mapbox-gl';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -47,6 +47,10 @@ export class DrawService {
   private updateFeatureCollection(): void {
     const data = this.draw.getAll();
     this.features$.next(data);
+  }
+
+  addFeature(feature: Feature): void {
+    this.draw.add(feature);
   }
 
   getFeatures(): FeatureCollection {
