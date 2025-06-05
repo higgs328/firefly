@@ -1,7 +1,7 @@
 import { DrawService } from '../../../core/services/draw.service';
 
 export abstract class LayerBase {
-  abstract layerId: string;
+  protected abstract layerId: string;
 
   protected drawService: DrawService;
 

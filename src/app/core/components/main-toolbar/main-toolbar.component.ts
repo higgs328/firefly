@@ -26,7 +26,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
   templateUrl: './main-toolbar.component.html',
 })
 export class MainToolbarComponent {
-  iconSource$: Observable<string>;
+  protected iconSource$: Observable<string>;
 
   constructor(private breakpointObserver: BreakpointObserver) {
     this.iconSource$ = this.breakpointObserver

@@ -25,12 +25,12 @@ export class AuthService {
     });
   }
 
-  async login(): Promise<void> {
+  public async login(): Promise<void> {
     const provider = new GoogleAuthProvider();
     await signInWithPopup(this.auth, provider);
   }
 
-  async logout(): Promise<void> {
+  public async logout(): Promise<void> {
     await signOut(this.auth);
     this.router.navigate(['/']);
   }

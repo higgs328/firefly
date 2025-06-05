@@ -13,7 +13,7 @@ import { LayerBase } from '../layer-base';
   templateUrl: './trail.component.html',
 })
 export class TrailLayerComponent extends LayerBase implements OnInit {
-  override layerId = 'test';
+  protected override layerId = 'test';
 
   public featureCollection?: FeatureCollection<LineString | MultiLineString>;
 
@@ -23,7 +23,7 @@ export class TrailLayerComponent extends LayerBase implements OnInit {
     super(drawService);
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.trailService.trails.subscribe((features) => {
       this.featureCollection = {
         features,

@@ -32,7 +32,7 @@ export class LoginComponent {
     private router: Router,
   ) {}
 
-  login(): void {
+  protected login(): void {
     this.authService.login();
   }
 }

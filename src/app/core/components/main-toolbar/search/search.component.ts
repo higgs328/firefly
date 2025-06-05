@@ -22,11 +22,11 @@ import { map, startWith } from 'rxjs/operators';
   templateUrl: './search.component.html',
 })
 export class SearchComponent implements OnInit {
-  searchInput = new FormControl('');
-  options: string[] = [];
-  filteredOptions: Observable<string[]> | undefined;
+  protected searchInput: FormControl = new FormControl('');
+  protected options: string[] = [];
+  protected filteredOptions?: Observable<string[]>;
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.filteredOptions = this.searchInput.valueChanges.pipe(
       startWith(''),
       map((value) => this._filter(value || '')),

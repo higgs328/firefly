@@ -6,7 +6,7 @@ export class UserService {
   public readonly user = signal<UserInfo | null>(null);
   public loaded = false;
 
-  init(user: UserInfo | null): void {
+  public init(user: UserInfo | null): void {
     if (user) {
       this.user.set({
         displayName: user?.displayName,
@@ -22,7 +22,7 @@ export class UserService {
     this.loaded = true;
   }
 
-  clear(): void {
+  public clear(): void {
     this.user.set(null);
   }
 }

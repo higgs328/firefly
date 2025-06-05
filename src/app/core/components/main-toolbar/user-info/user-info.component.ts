@@ -35,19 +35,19 @@ export class UserInfoComponent {
     private authService: AuthService,
   ) {}
 
-  get user(): UserInfo | null {
+  protected get user(): UserInfo | null {
     return this.userService.user();
   }
 
-  get hasUserInfo(): boolean {
+  protected get hasUserInfo(): boolean {
     return !!this.user;
   }
 
-  toggleUserInfo(): void {
+  protected toggleUserInfo(): void {
     this.showUserInfo = !this.showUserInfo;
   }
 
-  logout(): void {
+  protected logout(): void {
     this.showUserInfo = false;
     this.userService.clear();
     this.authService.logout();

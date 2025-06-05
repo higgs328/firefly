@@ -14,7 +14,7 @@ import { SceneBase } from '../scene-base';
   templateUrl: './structure.component.html',
 })
 export class StructureSceneComponent extends SceneBase {
-  override style = this.styles.structure;
+  protected override style = this.styles.structure;
 
   constructor(drawService: DrawService) {
     super(drawService);

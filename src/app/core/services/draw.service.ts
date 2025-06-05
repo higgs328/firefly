@@ -16,11 +16,11 @@ export class DrawService {
     type: 'FeatureCollection',
   });
 
-  get featureCollection$(): Observable<FeatureCollection> {
+  public get featureCollection$(): Observable<FeatureCollection> {
     return this.features$.asObservable();
   }
 
-  init(map: MapboxMap, options?: MapboxDraw.MapboxDrawOptions): void {
+  public init(map: MapboxMap, options?: MapboxDraw.MapboxDrawOptions): void {
     this.map = map;
     this.draw = new MapboxDraw(
       options || {
@@ -49,25 +49,25 @@ export class DrawService {
     this.features$.next(data);
   }
 
-  addFeature(feature: Feature): void {
+  public addFeature(feature: Feature): void {
     this.draw.add(feature);
   }
 
-  getFeatures(): FeatureCollection {
+  public getFeatures(): FeatureCollection {
     return this.draw.getAll();
   }
 
-  loadFeatures(collection: FeatureCollection): void {
+  public loadFeatures(collection: FeatureCollection): void {
     this.draw.set(collection);
     this.features$.next(collection);
   }
 
-  clearFeatures(): void {
+  public clearFeatures(): void {
     this.draw.deleteAll();
     this.features$.next({ features: [], type: 'FeatureCollection' });
   }
 
-  destroy(): void {
+  public destroy(): void {
     if (this.map && this.draw) {
       this.map.removeControl(this.draw);
     }

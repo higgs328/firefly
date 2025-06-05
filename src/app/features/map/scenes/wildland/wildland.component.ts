@@ -15,7 +15,7 @@ import { SceneBase } from '../scene-base';
   templateUrl: './wildland.component.html',
 })
 export class WildlandSceneComponent extends SceneBase {
-  override style = this.styles.wildland;
+  protected override style = this.styles.wildland;
 
   constructor(drawService: DrawService) {
     super(drawService);

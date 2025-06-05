@@ -11,9 +11,9 @@ import { RouterModule } from '@angular/router';
   templateUrl: './main-panel.component.html',
 })
 export class MainPanelComponent {
-  isExpanded = false;
+  protected isExpanded = false;
 
-  toggleExpand(): void {
+  protected toggleExpand(): void {
     this.isExpanded = !this.isExpanded;
   }
 }

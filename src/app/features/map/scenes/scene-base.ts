@@ -4,17 +4,17 @@ import { MapStyleConfig } from '../../../core/configs/mapbox.config.types';
 import { DrawService } from '../../../core/services/draw.service';
 
 export abstract class SceneBase {
-  zoom: [number] = mapboxConfig.map.zoom;
-  center: LngLatLike = mapboxConfig.map.center;
-  styles: MapStyleConfig = mapboxConfig.styles;
-  style: string = mapboxConfig.styles.default;
+  protected zoom: [number] = mapboxConfig.map.zoom;
+  protected center: LngLatLike = mapboxConfig.map.center;
+  protected styles: MapStyleConfig = mapboxConfig.styles;
+  protected style: string = mapboxConfig.styles.default;
   protected drawService: DrawService;
 
   constructor(drawService: DrawService) {
     this.drawService = drawService;
   }
 
-  mapCreate(map: Map): void {
+  protected mapCreate(map: Map): void {
     this.drawService.init(map);
   }
 }
