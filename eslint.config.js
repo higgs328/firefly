@@ -57,6 +57,38 @@ module.exports = tseslint.config(
           },
         },
       ],
+      '@typescript-eslint/member-ordering': [
+        'error',
+        {
+          default: [
+            // Index signature
+            'signature',
+
+            // Fields
+            'private-static-field',
+            'protected-static-field',
+            'public-static-field',
+
+            'private-instance-field',
+            'protected-instance-field',
+            'public-instance-field',
+
+            // Constructors
+            'private-constructor',
+            'protected-constructor',
+            'public-constructor',
+
+            // Methods
+            'private-static-method',
+            'protected-static-method',
+            'public-static-method',
+
+            'private-instance-method',
+            'protected-instance-method',
+            'public-instance-method',
+          ],
+        },
+      ],
       'import/no-duplicates': 'error',
       'import/order': [
         'error',

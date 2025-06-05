@@ -26,17 +26,17 @@ export class SearchComponent implements OnInit {
   protected options: string[] = [];
   protected filteredOptions?: Observable<string[]>;
 
-  public ngOnInit(): void {
-    this.filteredOptions = this.searchInput.valueChanges.pipe(
-      startWith(''),
-      map((value) => this._filter(value || '')),
-    );
-  }
-
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
     return this.options.filter((option) =>
       option.toLowerCase().includes(filterValue),
+    );
+  }
+
+  public ngOnInit(): void {
+    this.filteredOptions = this.searchInput.valueChanges.pipe(
+      startWith(''),
+      map((value) => this._filter(value || '')),
     );
   }
 }

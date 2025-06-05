@@ -13,11 +13,11 @@ import { LayerBase } from '../layer-base';
   templateUrl: './trail.component.html',
 })
 export class TrailLayerComponent extends LayerBase implements OnInit {
+  private trailService = inject(TrailService);
+
   protected override layerId = 'test';
 
   public featureCollection?: FeatureCollection<LineString | MultiLineString>;
-
-  private trailService = inject(TrailService);
 
   constructor(drawService: DrawService) {
     super(drawService);

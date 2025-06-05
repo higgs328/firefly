@@ -16,6 +16,11 @@ export class DrawService {
     type: 'FeatureCollection',
   });
 
+  private updateFeatureCollection(): void {
+    const data = this.draw.getAll();
+    this.features$.next(data);
+  }
+
   public get featureCollection$(): Observable<FeatureCollection> {
     return this.features$.asObservable();
   }
@@ -42,11 +47,6 @@ export class DrawService {
     map.on('draw.create', () => this.updateFeatureCollection());
     map.on('draw.update', () => this.updateFeatureCollection());
     map.on('draw.delete', () => this.updateFeatureCollection());
-  }
-
-  private updateFeatureCollection(): void {
-    const data = this.draw.getAll();
-    this.features$.next(data);
   }
 
   public addFeature(feature: Feature): void {
