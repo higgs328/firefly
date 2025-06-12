@@ -1,4 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  EnvironmentInjector,
+} from '@angular/core';
 import { MapComponent } from 'ngx-mapbox-gl';
 import { mapboxProvider } from '../../../../core/providers/mapbox.provider';
 import { DrawService } from '../../../../core/services/draw.service';
@@ -16,7 +20,7 @@ import { SceneBase } from '../scene-base';
 export class StreetSceneComponent extends SceneBase {
   protected override style = this.styles.street;
 
-  constructor(drawService: DrawService) {
-    super(drawService);
+  constructor(drawService: DrawService, injector: EnvironmentInjector) {
+    super(drawService, injector);
   }
 }

@@ -1,8 +1,14 @@
-import { Injectable } from '@angular/core';
+import {
+  ComponentRef,
+  createComponent,
+  EnvironmentInjector,
+  Injectable,
+} from '@angular/core';
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
 import type { Feature, FeatureCollection } from 'geojson';
-import { Map as MapboxMap } from 'mapbox-gl';
+import { IControl, Map as MapboxMap } from 'mapbox-gl';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { DrawComponent } from '../../features/map/components/draw/draw.component';
 
 @Injectable({
   providedIn: 'root',
@@ -20,28 +26,31 @@ export class DrawService {
     return this.features$.asObservable();
   }
 
-  public init(map: MapboxMap, options?: MapboxDraw.MapboxDrawOptions): void {
+  public init(map: MapboxMap, injector: EnvironmentInjector): void {
     this.map = map;
-    this.draw = new MapboxDraw(
-      options || {
-        controls: {
-          combine_features: false,
-          line_string: true,
-          point: true,
-          polygon: true,
-          trash: true,
-          uncombine_features: false,
-        },
-        displayControlsDefault: false,
+    const drawElement = document.createElement('div');
+    const drawComponent: ComponentRef<DrawComponent> = createComponent(
+      DrawComponent,
+      {
+        environmentInjector: injector,
       },
     );
+    drawElement.appendChild(drawComponent.location.nativeElement);
+    this.addControl(drawElement);
+  }
 
-    this.map.addControl(this.draw);
-
-    // Subscribe to draw events
-    map.on('draw.create', () => this.updateFeatureCollection());
-    map.on('draw.update', () => this.updateFeatureCollection());
-    map.on('draw.delete', () => this.updateFeatureCollection());
+  private addControl(drawElement: HTMLDivElement): void {
+    const drawControl = {
+      onAdd: (): HTMLDivElement => {
+        return drawElement;
+      },
+      onRemove: (): void => {
+        if (drawElement.parentNode) {
+          drawElement.parentNode.removeChild(drawElement);
+        }
+      },
+    };
+    this.map.addControl(drawControl as unknown as IControl, 'top-right');
   }
 
   private updateFeatureCollection(): void {
