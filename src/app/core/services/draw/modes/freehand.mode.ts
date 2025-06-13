@@ -85,13 +85,6 @@ const FreehandMode: DrawCustomMode<FreehandState, FreehandOptions> = {
 
     this.addFeature(polygon);
     this.clearSelectedFeatures();
-
-    // disable dragPan
-    setTimeout(() => {
-      if (!this.map?.dragPan) return;
-      this.map.dragPan.disable();
-    }, 0);
-
     this.updateUIClasses({ mouse: cursors.ADD });
     this.activateUIButton(types.POLYGON);
     this.setActionableState({

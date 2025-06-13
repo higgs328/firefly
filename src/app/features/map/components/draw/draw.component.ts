@@ -18,6 +18,6 @@ export class DrawComponent {
   constructor(private drawService: DrawService) {}
 
   protected onToolChange(event: MatButtonToggleChange): void {
-    this.drawService.setMode(event.value);
+    this.drawService.changeDrawMode(event.value);
   }
 }

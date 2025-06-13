@@ -6,33 +6,20 @@ import {
   Injectable,
 } from '@angular/core';
 import MapboxDraw from '@mapbox/mapbox-gl-draw';
-import type { Feature, FeatureCollection } from 'geojson';
 import { IControl, Map as MapboxMap } from 'mapbox-gl';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { DrawComponent } from '../../../features/map/components/draw/draw.component';
 import FreehandMode from './modes/freehand.mode';
 import SelectMode from './modes/select.mode';
 
 @Injectable({ providedIn: 'root' })
 export class DrawService {
-  private draw!: MapboxDraw;
-  private map!: MapboxMap;
-
-  private features$ = new BehaviorSubject<FeatureCollection>({
-    features: [],
-    type: 'FeatureCollection',
-  });
-
-  public get featureCollection$(): Observable<FeatureCollection> {
-    return this.features$.asObservable();
-  }
+  private mapboxMap!: MapboxMap;
+  private mapboxDraw!: MapboxDraw;
 
   constructor(private app: ApplicationRef) {}
 
-  public init(map: MapboxMap, injector: EnvironmentInjector): void {
-    this.map = map;
-
-    this.draw = new MapboxDraw({
+  private initMapboxDraw(mapboxMap: MapboxMap): MapboxDraw {
+    const mapboxDraw = new MapboxDraw({
       displayControlsDefault: false,
       modes: {
         ...MapboxDraw.modes,
@@ -40,64 +27,69 @@ export class DrawService {
         select: SelectMode,
       } as Record<string, MapboxDraw.DrawCustomMode<object, object>>,
     });
+    mapboxMap.addControl(mapboxDraw);
+    return mapboxDraw;
+  }
 
-    const drawParentDiv = document.createElement('div');
+  private initDrawControl(
+    mapboxMap: MapboxMap,
+    injector: EnvironmentInjector,
+  ): void {
+    const drawElement = document.createElement('div');
     const drawComponent: ComponentRef<DrawComponent> = createComponent(
       DrawComponent,
       {
         environmentInjector: injector,
       },
     );
-
-    this.app.attachView(drawComponent.hostView);
-    drawParentDiv.appendChild(drawComponent.location.nativeElement);
-    this.map.addControl(this.draw);
-    this.addControl(drawParentDiv);
-  }
-
-  private addControl(drawElement: HTMLDivElement): void {
+    drawElement.appendChild(drawComponent.location.nativeElement);
     const drawControl = {
       onAdd: (): HTMLDivElement => drawElement,
       onRemove: (): void => {
         drawElement.parentNode?.removeChild(drawElement);
       },
     };
-    this.map.addControl(drawControl as unknown as IControl, 'top-right');
+    this.app.attachView(drawComponent.hostView);
+    mapboxMap.addControl(drawControl as unknown as IControl, 'top-right');
   }
 
-  public setMode(drawMode: 'select' | 'freehand' | 'simple_select'): void {
-    if (!this.draw) {
+  private toggleMapInteractions(enable: boolean): void {
+    if (!this.mapboxMap) return;
+    if (enable) {
+      this.mapboxMap.boxZoom.enable();
+      this.mapboxMap.doubleClickZoom.enable();
+      this.mapboxMap.dragPan.enable();
+      this.mapboxMap.dragRotate.enable();
+      this.mapboxMap.keyboard.enable();
+      this.mapboxMap.scrollZoom.enable();
+      this.mapboxMap.touchZoomRotate.enable();
+    } else {
+      this.mapboxMap.boxZoom.disable();
+      this.mapboxMap.doubleClickZoom.disable();
+      this.mapboxMap.dragPan.disable();
+      this.mapboxMap.dragRotate.disable();
+      this.mapboxMap.keyboard.disable();
+      this.mapboxMap.scrollZoom.disable();
+      this.mapboxMap.touchZoomRotate.disable();
+    }
+  }
+
+  public init(mapboxMap: MapboxMap, injector: EnvironmentInjector): void {
+    this.mapboxMap = mapboxMap;
+    this.mapboxDraw = this.initMapboxDraw(mapboxMap);
+    this.initDrawControl(mapboxMap, injector);
+  }
+
+  public changeDrawMode(drawMode: 'select' | 'freehand'): void {
+    if (!this.mapboxDraw) {
       return;
     }
-    this.draw.changeMode(drawMode as keyof typeof this.draw.modes);
-  }
-
-  private updateFeatureCollection(): void {
-    const data = this.draw.getAll();
-    this.features$.next(data);
-  }
-
-  public addFeature(feature: Feature): void {
-    this.draw.add(feature);
-  }
-
-  public getFeatures(): FeatureCollection {
-    return this.draw.getAll();
-  }
-
-  public loadFeatures(collection: FeatureCollection): void {
-    this.draw.set(collection);
-    this.features$.next(collection);
-  }
-
-  public clearFeatures(): void {
-    this.draw.deleteAll();
-    this.features$.next({ features: [], type: 'FeatureCollection' });
-  }
-
-  public destroy(): void {
-    if (this.map && this.draw) {
-      this.map.removeControl(this.draw);
+    if (drawMode === 'select') {
+      this.toggleMapInteractions(true);
     }
+    if (drawMode === 'freehand') {
+      this.toggleMapInteractions(false);
+    }
+    this.mapboxDraw.changeMode(drawMode as keyof typeof this.mapboxDraw.modes);
   }
 }
