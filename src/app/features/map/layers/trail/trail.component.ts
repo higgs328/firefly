@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import type { FeatureCollection, LineString, MultiLineString } from 'geojson';
 import { GeoJSONSourceComponent, LayerComponent } from 'ngx-mapbox-gl';
-import { DrawService } from '../../../../core/services/draw.service';
+import { DrawService } from '../../../../core/services/draw/draw.service';
 import { TrailService } from '../../../../core/services/trail.service';
 import { LayerBase } from '../layer-base';
 

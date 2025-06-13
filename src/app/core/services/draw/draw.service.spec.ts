@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { DrawService } from './draw.service';
+import { DrawService } from './draw/draw.service';
 
 describe('DrawService', () => {
   let service: DrawService;

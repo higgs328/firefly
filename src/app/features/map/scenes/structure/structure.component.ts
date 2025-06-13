@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 import { MapComponent } from 'ngx-mapbox-gl';
 import { mapboxProvider } from '../../../../core/providers/mapbox.provider';
-import { DrawService } from '../../../../core/services/draw.service';
+import { DrawService } from '../../../../core/services/draw/draw.service';
 import { SceneBase } from '../scene-base';
 
 @Component({

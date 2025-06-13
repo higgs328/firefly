@@ -1,1 +1,17 @@
-<p>draw works!</p>
+<mat-button-toggle-group
+  name="drawTools"
+  (change)="onToolChange($event)"
+  aria-label="Drawing Tools"
+  exclusive
+  vertical
+>
+  <mat-button-toggle value="simple_select" aria-label="Pan Tool">
+    <mat-icon>edit_off</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle value="select" aria-label="Select Tool">
+    <mat-icon>touch_app</mat-icon>
+  </mat-button-toggle>
+  <mat-button-toggle value="freehand" aria-label="Freehand Draw Tool">
+    <mat-icon>draw</mat-icon>
+  </mat-button-toggle>
+</mat-button-toggle-group>

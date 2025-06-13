@@ -1,4 +1,5 @@
 import {
+  ApplicationRef,
   ComponentRef,
   createComponent,
   EnvironmentInjector,
@@ -8,11 +9,11 @@ import MapboxDraw from '@mapbox/mapbox-gl-draw';
 import type { Feature, FeatureCollection } from 'geojson';
 import { IControl, Map as MapboxMap } from 'mapbox-gl';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { DrawComponent } from '../../features/map/components/draw/draw.component';
+import { DrawComponent } from '../../../features/map/components/draw/draw.component';
+import FreehandMode from './modes/freehand.mode';
+import SelectMode from './modes/select.mode';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class DrawService {
   private draw!: MapboxDraw;
   private map!: MapboxMap;
@@ -26,31 +27,49 @@ export class DrawService {
     return this.features$.asObservable();
   }
 
+  constructor(private app: ApplicationRef) {}
+
   public init(map: MapboxMap, injector: EnvironmentInjector): void {
     this.map = map;
-    const drawElement = document.createElement('div');
+
+    this.draw = new MapboxDraw({
+      displayControlsDefault: false,
+      modes: {
+        ...MapboxDraw.modes,
+        freehand: FreehandMode,
+        select: SelectMode,
+      } as Record<string, MapboxDraw.DrawCustomMode<object, object>>,
+    });
+
+    const drawParentDiv = document.createElement('div');
     const drawComponent: ComponentRef<DrawComponent> = createComponent(
       DrawComponent,
       {
         environmentInjector: injector,
       },
     );
-    drawElement.appendChild(drawComponent.location.nativeElement);
-    this.addControl(drawElement);
+
+    this.app.attachView(drawComponent.hostView);
+    drawParentDiv.appendChild(drawComponent.location.nativeElement);
+    this.map.addControl(this.draw);
+    this.addControl(drawParentDiv);
   }
 
   private addControl(drawElement: HTMLDivElement): void {
     const drawControl = {
-      onAdd: (): HTMLDivElement => {
-        return drawElement;
-      },
+      onAdd: (): HTMLDivElement => drawElement,
       onRemove: (): void => {
-        if (drawElement.parentNode) {
-          drawElement.parentNode.removeChild(drawElement);
-        }
+        drawElement.parentNode?.removeChild(drawElement);
       },
     };
     this.map.addControl(drawControl as unknown as IControl, 'top-right');
+  }
+
+  public setMode(drawMode: 'select' | 'freehand' | 'simple_select'): void {
+    if (!this.draw) {
+      return;
+    }
+    this.draw.changeMode(drawMode as keyof typeof this.draw.modes);
   }
 
   private updateFeatureCollection(): void {

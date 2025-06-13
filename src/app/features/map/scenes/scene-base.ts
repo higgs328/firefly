@@ -2,7 +2,7 @@ import { EnvironmentInjector } from '@angular/core';
 import { LngLatLike, Map } from 'mapbox-gl';
 import { mapboxConfig } from '../../../core/configs/mapbox.config';
 import { MapStyleConfig } from '../../../core/configs/mapbox.config.types';
-import { DrawService } from '../../../core/services/draw.service';
+import { DrawService } from '../../../core/services/draw/draw.service';
 
 export abstract class SceneBase {
   protected zoom: [number] = mapboxConfig.map.zoom;
