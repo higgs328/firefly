@@ -33,7 +33,7 @@ export class MainToolbarComponent {
       .observe([Breakpoints.HandsetPortrait, Breakpoints.HandsetLandscape])
       .pipe(
         map((result) =>
-          result.matches ? 'img/brand_logo.png' : 'img/brand_name_logo.png',
+          result.matches ? 'icons/icon-32x32.png' : 'img/brand_name_logo.png',
         ),
       );
   }
