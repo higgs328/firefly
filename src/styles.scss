@@ -17,4 +17,8 @@ body {
   font-family: Oxanium, sans-serif;
   height: 100%;
   margin: 0;
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+  overscroll-behavior: none;
+  touch-action: none;
 }
