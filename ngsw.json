@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1750166805584,
+  "timestamp": 1750167230792,
   "index": "/firefly/index.html",
   "assetGroups": [
     {
@@ -94,7 +94,7 @@
     "/firefly/img/favicon-16x16.png": "37f4e95d49e2652dfc434fef5f0525a306306430",
     "/firefly/img/favicon-32x32.png": "adea1c5b3a14f25b495c426c02e9f9a139639b34",
     "/firefly/img/firebase_logo.png": "f1daa26ba8516c6aa829cc067a8a53280706bc1b",
-    "/firefly/index.html": "6ff61fbfbc02a915e71aad1c651a1b1864d70d2a",
+    "/firefly/index.html": "e2be6e210087bafb536ac083ba6e294458ea5a43",
     "/firefly/main-DCQUTOTW.js": "509ef8ffdd75104334e44a574e093e129ce525bc",
     "/firefly/manifest.webmanifest": "565c252c0e636786efaa33920ed5dbb95f9debc2",
     "/firefly/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
